@@ -7,4 +7,4 @@ before_script:
         - docker build -t mofon/docker-gotty .
 
 script:
-        - docker run --rm mofon/docker-gotty
+        - docker run --rm mofon/docker-gotty gotty -h
