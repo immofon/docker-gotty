@@ -8,3 +8,9 @@ before_script:
 
 script:
         - docker run --rm mofon/docker-gotty gotty -h
+
+after_success:
+        - if [ "$TRAVIS_BRANCH" == "master" ]; then
+          docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+          docker push mofon/docker-gotty;
+          fi
