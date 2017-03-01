@@ -1,3 +1,5 @@
 FROM golang:1.8
 
-CMD go version && env
+RUN go get github.com/yudai/gotty
+
+CMD gotty -h && env
